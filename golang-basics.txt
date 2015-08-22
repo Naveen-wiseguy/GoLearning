@@ -1,0 +1,75 @@
+Golang:
+1) import - used to import packages, can be clubbed together in ()
+2) Only names starting in caps will be exported
+3) data types expressed after variabel names : x int
+4) Return type of function comes after hte functions parentheses
+Eg - func num(x int) int {
+
+}
+Uses braces like C
+5) data types - float32,float64,int8,int16,int32,int64,uint8,uint16,uint32,uint64, bool,string,complex64,complex128
+comlex- a new data type
+6) functions can return multiple values
+func x() (int,int)
+{
+ return (a,b)
+}
+
+7) variable declaration : var x int,y int
+/
+var x,y,z int
+8) type can be omitted incase of initialization
+var x,y=false,"!"
+9) := operator used as short hand for initialization, without using var or type
+10) only for loop there in go. No parentheses, braces compulsory
+eg - for i:=0;i<10;i++ {
+fmt.Println(i)
+}
+11) for can also be used similar to a while loop
+eg -
+for i<10 {
+
+}
+12) if statement similar to C, no parentheses and braces compulsory
+eg- 
+if ab<c {
+
+}
+13) if statement can also have an initialisation statement eg -
+if i:=12; i<23 {
+
+}
+scope only within that if block and all corresponding else blocks
+14) switch statement - similar syntax, excepth that no break is needed and it breaks automatiucally after each statemnt unless explicitly specified as fallthrough
+15) defer - a function is not called until the surrounding function returns. They are put in stack and executed in LIFO
+16) pointers exist in Go. Similar syntax
+var *t=&i
+*t=22
+Same dereferencing method. However, it does not allow pointer arithmetic
+17) struct - collection of fields. Used with type declaration. Eg - 
+type Vertex struct {
+X int
+Y int
+}
+Accesssed using a dot operator. Initialised using type name and {}
+i:= Vertex{1,2}
+18) struct can have pointers. But their indirection is transparent. Ie, we can use dot with both.
+19) arrays - similar to C, except declaration. eg- var a [2]int
+20) slices - pointing to arrays, can be sliced again to point to another part of same array.
+slices can be constructed using - make( []type,size[,capacity])
+we can append ot a slice - append(slice, elements). It will dynamically adjust the size of the backing array.
+Iteration over a slice using range form of for loop where s is a slice :
+for i,v := range s {
+
+}
+21) Go has maps - declared as map[key type]value type
+Maps must be created only using make.
+Map deleteion can be done using delete(m,key)
+We can chcek for existence using elem,ok:=m[key]. ok is false if it doesnt exist.
+22) Go does not have classes. You can define methods for structs. The syntax is as :
+func (var *struct type) method(args) return type{
+
+}
+23) MEthods can be defined on any type decalred in your package
+24) Interfaces are a type that defines the methods thaqt need to be implemented.
+eg type X interface  { Abs() float32 }
